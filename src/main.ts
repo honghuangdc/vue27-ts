@@ -1,18 +1,20 @@
-import Vue from 'vue'
-import { createPinia } from 'pinia'
+import Vue from 'vue';
+import { setupRouter, router } from './router';
+import App from './App.vue';
+import { setupPinia, pinia } from './stores';
 
-import App from './App.vue'
-import router from './router'
+function setupApp() {
+  setupPinia(Vue);
 
-// const app = createApp(App)
+  setupRouter(Vue);
 
-// app.use(createPinia())
-// app.use(router)
+  const app = new Vue({
+    render: h => h(App),
+    router,
+    pinia
+  });
 
-// app.mount('#app')
+  app.$mount('#app');
+}
 
-const app = new Vue({
-  el: '#app',
-  render: (h) => h(App),
-  router
-})
+setupApp();
