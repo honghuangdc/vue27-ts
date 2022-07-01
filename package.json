@@ -1,0 +1,25 @@
+{
+  "name": "vue27-ts",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview --port 4173",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "pinia": "^2.0.14",
+    "vue": "2.7.0",
+    "vue-router": "3.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.41",
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "@vue/tsconfig": "^0.1.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "~4.7.4",
+    "vite": "^2.9.12",
+    "vue-tsc": "^0.38.1"
+  }
+}
